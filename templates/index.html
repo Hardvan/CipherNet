@@ -61,38 +61,40 @@
 
     <!-- Cards -->
     <div class="container my-5">
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <div class="col">
-          <div class="card h-100">
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card">
             <img
               src="{{url_for('static', filename='images/morse.jpg')}}"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
-              <h5 class="card-title">Morse Code</h5>
-              <p class="card-text">
+              <h5 class="card-title text-center">Morse Code</h5>
+              <p class="card-text text-center">
                 The original binary code that transmitted information at the
                 speed of light long before the internet existed.
               </p>
-              <a href="#" class="btn btn-primary">Try Morse Code</a>
+              <a href="#" class="btn btn-primary d-block mx-auto"
+                >Try Morse Code</a
+              >
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card">
             <img
               src="{{url_for('static', filename='images/rsa.jpg')}}"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
-              <h5 class="card-title">RSA</h5>
-              <p class="card-text">
+              <h5 class="card-title text-center">RSA</h5>
+              <p class="card-text text-center">
                 The encryption algorithm that turns the art of number theory
                 into the science of secure communication.
               </p>
-              <a href="#" class="btn btn-primary">Try RSA</a>
+              <a href="#" class="btn btn-primary d-block mx-auto">Try RSA</a>
             </div>
           </div>
         </div>
