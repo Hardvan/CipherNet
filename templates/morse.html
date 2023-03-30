@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morse Code</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="" />
+
+    <!-- Bootstrap Link (to be added before other stylesheet links) -->
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS Link -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/morse.css')
+    }}"
+    />
+  </head>
+  <body>
+    <!-- Cards -->
+    <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card">
+            <img
+              src="{{url_for('static', filename='images/morse.jpg')}}"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title text-center">Morse to English</h5>
+              <form method="post" action="{{ url_for('morse') }}">
+                <div class="form-floating mb-3">
+                  <textarea
+                    class="form-control"
+                    placeholder="Morse code"
+                    id="morse-to-eng"
+                    name="morse_to_eng"
+                    required
+                  ></textarea>
+                  <label for="morse-to-eng">Morse code</label>
+                </div>
+                <button type="submit" class="btn btn-primary d-block mx-auto">
+                  Translate
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card">
+            <img
+              src="{{url_for('static', filename='images/morse.jpg')}}"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title text-center">English to Morse</h5>
+              <form method="post" action="{{ url_for('morse') }}">
+                <div class="form-floating mb-3">
+                  <textarea
+                    class="form-control"
+                    placeholder="English text"
+                    id="eng-to-morse"
+                    name="eng_to_morse"
+                    required
+                  ></textarea>
+                  <label for="eng-to-morse">English text</label>
+                </div>
+                <button type="submit" class="btn btn-primary d-block mx-auto">
+                  Translate
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% if result %}
+    <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card">
+            <img
+              src="{{url_for('static', filename='images/morse.jpg')}}"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title text-center">Morse to English</h5>
+              <div class="form-floating mb-3">
+                <textarea
+                  class="form-control"
+                  placeholder="English text"
+                  id="morse-to-eng-result"
+                  readonly
+                >
+{{ result['morse_to_eng'] }}</textarea
+                >
+                <label for="morse-to-eng-result">English text</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %} {% if result %}
+    <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card">
+            <img
+              src="{{url_for('static', filename='images/morse.jpg')}}"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title text-center">English to Morse</h5>
+              <div class="form-floating mb-3">
+                <textarea
+                  class="form-control"
+                  placeholder="Morse code"
+                  id="eng-to-morse-result"
+                  readonly
+                >
+{{ result['eng_to_morse'] }}</textarea
+                >
+                <label for="eng-to-morse-result">Morse code</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Bootstrap JS (to be added before other JS links) -->
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
