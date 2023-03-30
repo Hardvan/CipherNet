@@ -34,6 +34,7 @@
     />
   </head>
   <body>
+    <!-- Intro -->
     <section>
       <img
         src="{{url_for('static', filename='images/bg.jpg')}}"
@@ -55,8 +56,48 @@
         id="road"
         alt="road"
       />
-      <h2 id="Title">Moon Light</h2>
+      <h2 id="Title">CipherNet</h2>
     </section>
+
+    <!-- Cards -->
+    <div class="container my-5">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="{{url_for('static', filename='images/morse.jpg')}}"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Morse Code</h5>
+              <p class="card-text">
+                The original binary code that transmitted information at the
+                speed of light long before the internet existed.
+              </p>
+              <a href="#" class="btn btn-primary">Try Morse Code</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="{{url_for('static', filename='images/rsa.jpg')}}"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">RSA</h5>
+              <p class="card-text">
+                The encryption algorithm that turns the art of number theory
+                into the science of secure communication.
+              </p>
+              <a href="#" class="btn btn-primary">Try RSA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Custom JS -->
     <script
