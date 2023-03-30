@@ -7,7 +7,7 @@
     <title>CipherNet</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="../static/favicons/cpu.png" />
+    <link rel="icon" href="" />
 
     <!-- Bootstrap Link (to be added before other stylesheet links) -->
     <!-- CSS only -->
@@ -19,6 +19,12 @@
     />
 
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Custom CSS Link -->
     <link
@@ -28,6 +34,36 @@
     />
   </head>
   <body>
+    <section>
+      <img
+        src="{{url_for('static', filename='images/bg.jpg')}}"
+        id="bg"
+        alt="bg"
+      />
+      <img
+        src="{{url_for('static', filename='images/moon.png')}}"
+        id="moon"
+        alt="moon"
+      />
+      <img
+        src="{{url_for('static', filename='images/mountain.png')}}"
+        id="mountain"
+        alt="mountain"
+      />
+      <img
+        src="{{url_for('static', filename='images/road.png')}}"
+        id="road"
+        alt="road"
+      />
+      <h2 id="Title">Moon Light</h2>
+    </section>
+
+    <!-- Custom JS -->
+    <script
+      type="text/javascript"
+      src="{{url_for('static', filename='js/index.js')}}"
+    ></script>
+
     <!-- Bootstrap JS (to be added before other JS links) -->
     <!-- JavaScript Bundle with Popper -->
     <script
