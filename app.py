@@ -112,10 +112,12 @@ def morse():
         result = {}
         if morse_to_eng_text:
             # print(morse_to_eng_text)
+            result["original"] = morse_to_eng_text
             result['morse_to_eng'] = morse_to_eng(morse_to_eng_text)
             # print(result['morse_to_eng'])
         if eng_to_morse_text:
             # print(eng_to_morse_text)
+            result["original"] = eng_to_morse_text
             result['eng_to_morse'] = eng_to_morse(eng_to_morse_text)
             # print(result['eng_to_morse'])
 

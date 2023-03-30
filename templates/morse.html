@@ -34,41 +34,8 @@
     />
   </head>
   <body>
-    <!-- Morse to English -->
     <div class="container my-5">
       <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card">
-            <img
-              src="{{url_for('static', filename='images/morse.jpg')}}"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title text-center">Morse to English</h5>
-              <form method="POST" action="{{ url_for('morse') }}">
-                <div class="form-floating mb-3">
-                  <textarea
-                    class="form-control"
-                    placeholder="Morse code"
-                    id="morse-to-eng"
-                    name="morse_to_eng"
-                    required
-                  ></textarea>
-                  <label for="morse-to-eng">Morse code</label>
-                </div>
-                <button type="submit" class="btn btn-primary d-block mx-auto">
-                  Translate
-                </button>
-              </form>
-              {% if result["morse_to_eng"] %}
-              <hr />
-              <h6 class="card-subtitle mb-2 text-muted">Result:</h6>
-              <p class="card-text">{{ result["morse_to_eng"] }}</p>
-              {% endif %}
-            </div>
-          </div>
-        </div>
         <!-- English to Morse -->
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card">
@@ -96,13 +63,56 @@
               </form>
               {% if result["eng_to_morse"] %}
               <hr />
+              <h6 class="card-subtitle mb-2 text-muted">Original:</h6>
+              <p class="card-text">{{ result["original"] }}</p>
               <h6 class="card-subtitle mb-2 text-muted">Result:</h6>
               <p class="card-text">{{ result["eng_to_morse"] }}</p>
               {% endif %}
             </div>
           </div>
         </div>
+
+        <!-- Morse to English -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card">
+            <img
+              src="{{url_for('static', filename='images/morse.jpg')}}"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title text-center">Morse to English</h5>
+              <form method="POST" action="{{ url_for('morse') }}">
+                <div class="form-floating mb-3">
+                  <textarea
+                    class="form-control"
+                    placeholder="Morse code"
+                    id="morse-to-eng"
+                    name="morse_to_eng"
+                    required
+                  ></textarea>
+                  <label for="morse-to-eng">Morse code</label>
+                </div>
+                <button type="submit" class="btn btn-primary d-block mx-auto">
+                  Translate
+                </button>
+              </form>
+              {% if result["morse_to_eng"] %}
+              <hr />
+              <h6 class="card-subtitle mb-2 text-muted">Original:</h6>
+              <p class="card-text">{{ result["original"] }}</p>
+              <h6 class="card-subtitle mb-2 text-muted">Result:</h6>
+              <p class="card-text">{{ result["morse_to_eng"] }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
       </div>
+      {% if result["morse_to_eng"] or result["eng_to_morse"] %}
+      <div class="text-center my-3">
+        <a href="{{ url_for('index') }}" class="btn btn-success">Go Back</a>
+      </div>
+      {% endif %}
     </div>
 
     <!-- Bootstrap JS (to be added before other JS links) -->
