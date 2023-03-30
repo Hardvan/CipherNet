@@ -126,11 +126,5 @@ def morse():
     return render_template('morse.html', result=None)
 
 
-@app.route('/rsa')
-def rsa():
-
-    return render_template('rsa.html')
-
-
 if __name__ == "__main__":
     app.run(debug=True)
