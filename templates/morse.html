@@ -61,6 +61,11 @@
                   Translate
                 </button>
               </form>
+              {% if result["morse_to_eng"] %}
+              <hr />
+              <h6 class="card-subtitle mb-2 text-muted">Result:</h6>
+              <p class="card-text">{{ result["morse_to_eng"] }}</p>
+              {% endif %}
             </div>
           </div>
         </div>
@@ -89,6 +94,11 @@
                   Translate
                 </button>
               </form>
+              {% if result["eng_to_morse"] %}
+              <hr />
+              <h6 class="card-subtitle mb-2 text-muted">Result:</h6>
+              <p class="card-text">{{ result["eng_to_morse"] }}</p>
+              {% endif %}
             </div>
           </div>
         </div>
