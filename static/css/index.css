@@ -61,3 +61,35 @@ section img {
 #road {
   z-index: 2;
 }
+
+footer {
+  font-size: 14px;
+}
+
+footer h5 {
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+footer p {
+  color: #ccc;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer ul li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+footer ul li a:hover {
+  color: #ccc;
+}
+
+footer hr {
+  border-color: #999;
+}
