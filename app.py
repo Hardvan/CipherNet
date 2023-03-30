@@ -107,8 +107,8 @@ def morse():
 
     if request.method == 'POST':
 
-        morse_to_eng_text = request.form['morse_to_eng']
-        eng_to_morse_text = request.form['eng_to_morse']
+        morse_to_eng_text = request.form.get('morse_to_eng', None)
+        eng_to_morse_text = request.form.get('eng_to_morse', None)
         result = {}
         if morse_to_eng_text:
             result['morse_to_eng'] = morse_to_eng(morse_to_eng_text)

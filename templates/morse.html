@@ -95,66 +95,6 @@
       </div>
     </div>
 
-    <!-- Results -->
-
-    {% if result %}
-    <div class="container my-5">
-      <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card">
-            <img
-              src="{{url_for('static', filename='images/morse.jpg')}}"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title text-center">Morse to English</h5>
-              <div class="form-floating mb-3">
-                <textarea
-                  class="form-control"
-                  placeholder="English text"
-                  id="morse-to-eng-result"
-                  readonly
-                >
-{{ result['morse_to_eng'] }}</textarea
-                >
-                <label for="morse-to-eng-result">English text</label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    {% endif %} {% if result %}
-    <div class="container my-5">
-      <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card">
-            <img
-              src="{{url_for('static', filename='images/morse.jpg')}}"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title text-center">English to Morse</h5>
-              <div class="form-floating mb-3">
-                <textarea
-                  class="form-control"
-                  placeholder="Morse code"
-                  id="eng-to-morse-result"
-                  readonly
-                >
-{{ result['eng_to_morse'] }}</textarea
-                >
-                <label for="eng-to-morse-result">Morse code</label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    {% endif %}
-
     <!-- Bootstrap JS (to be added before other JS links) -->
     <!-- JavaScript Bundle with Popper -->
     <script
