@@ -34,7 +34,7 @@
     />
   </head>
   <body>
-    <!-- Cards -->
+    <!-- Morse to English -->
     <div class="container my-5">
       <div class="row justify-content-center">
         <div class="col-md-6 col-lg-4 mb-4">
@@ -46,7 +46,7 @@
             />
             <div class="card-body">
               <h5 class="card-title text-center">Morse to English</h5>
-              <form method="post" action="{{ url_for('morse') }}">
+              <form method="POST" action="{{ url_for('morse') }}">
                 <div class="form-floating mb-3">
                   <textarea
                     class="form-control"
@@ -64,6 +64,7 @@
             </div>
           </div>
         </div>
+        <!-- English to Morse -->
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card">
             <img
@@ -73,7 +74,7 @@
             />
             <div class="card-body">
               <h5 class="card-title text-center">English to Morse</h5>
-              <form method="post" action="{{ url_for('morse') }}">
+              <form method="POST" action="{{ url_for('morse') }}">
                 <div class="form-floating mb-3">
                   <textarea
                     class="form-control"
@@ -93,6 +94,8 @@
         </div>
       </div>
     </div>
+
+    <!-- Results -->
 
     {% if result %}
     <div class="container my-5">
