@@ -84,6 +84,7 @@ footer a {
 footer ul li {
   list-style: none;
   margin-bottom: 10px;
+  margin-right: 10px;
 }
 
 footer ul li a:hover {
